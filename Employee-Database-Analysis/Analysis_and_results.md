@@ -43,13 +43,15 @@ INNER JOIN LOCATION L
 ```
 
 ### Result
-Employee_Id	First_Name	Last_Name	Department_Name	City	Salary
-7369	       John	      Smith	    Sales	          Chicago	800
-7499	       Kevin	    Allen	    Research	      Dallas	1600
-755	         Jean	      Doyle	    Research	      Dallas	2850
-756	         Lynn	      Dennis	  Research	      Dallas	2750
-757	         Leslie	    Baker	    Operations	    Boston	2200
-7521	       Cynthia	  Wark	    Research	      Dallas	1250
+
+| Employee ID | First Name | Last Name | Department | City | Salary |
+|---:|---|---|---|---|---:|
+| 7369 | John | Smith | Sales | Chicago | 800 |
+| 7499 | Kevin | Allen | Research | Dallas | 1600 |
+| 755 | Jean | Doyle | Research | Dallas | 2850 |
+| 756 | Lynn | Dennis | Research | Dallas | 2750 |
+| 757 | Leslie | Baker | Operations | Boston | 2200 |
+| 7521 | Cynthia | Wark | Research | Dallas | 1250 |
 
 ### Insight
 
@@ -87,8 +89,9 @@ ORDER BY Total_Employees DESC;
 
 ### Result
 
-Department_Name|	Total_Employees
-Research	     | 4
+| Department_Name | Total_Employees |
+|---|---:|
+| Research | 4 |
 
 ### Insight
 
@@ -140,11 +143,12 @@ ORDER BY Salary_Grade;
 
 ### Result
 
-Salary_Grade	Number_of_Employees
-A	            2
-B	            1
-C	            2
-D	            1
+| Salary_Grade | Number_of_Employees |
+|---|---:|
+| A | 2 |
+| B | 1 |
+| C | 2 |
+| D | 1 |
 
 ### Insight
 
@@ -184,8 +188,10 @@ WHERE Salary = (
 ```
 
 ### Result
-Employee_Id	First_Name	Last_Name	Salary
-756	        Lynn       Dennis	    2750
+
+| Employee_Id | First_Name | Last_Name | Salary |
+|---:|---|---|---:|
+| 756 | Lynn | Dennis | 2750 |
 
 ### Insight
 
@@ -225,9 +231,10 @@ WHERE E.Salary > (
 
 ### Result
 
-Employee_Id	First_Name	Last_Name	Department_Id	Salary
-755	         Jean       Doyle	     30	          2850
-756	         Lynn	      Dennis	   30	          2750
+| Employee_Id | First_Name | Last_Name | Department_Id | Salary |
+|---:|---|---|---:|---:|
+| 755 | Jean | Doyle | 30 | 2850 |
+| 756 | Lynn | Dennis | 30 | 2750 |
 
 ### Insight
 
@@ -237,5 +244,28 @@ Jean Doyle and Lynn Dennis earn more than the average salary within Department 3
 
 ## 7. Key Findings
 
-- The sample contains six employee records
+- The sample contains six employee records across three departments.
+- Research has the largest employee count, with four employees.
+- Two employees belong to salary Grade A under the defined classification rules.
+- The second-highest distinct salary is 2750.
+- Two employees earn more than their department's average salary.
+
+These findings describe the supplied sample records only; they should not be interpreted as conclusions about a real organization.
+
+## 8. Key Learnings
+
+Through this case study, I practiced:
+
+- Combining related tables using SQL joins.
+- Summarizing data with aggregate functions and grouping.
+- Filtering grouped results using `HAVING`.
+- Creating business-defined categories with `CASE`.
+- Solving ranking questions with nested subqueries.
+- Comparing individual records against group-level averages using correlated subqueries.
+
+## 9. Project Files
+
+- `case_study_2.sql` — Database table creation, sample data, and SQL queries.
+- `README.md` — Project overview, database structure, technologies, and setup instructions.
+- `analysis_and_results.md` — Selected SQL questions, solutions, outputs, and interpretations.
 
